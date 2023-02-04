@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://fortuneikechi.vercel.app/sitemap.xml
