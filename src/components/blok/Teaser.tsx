@@ -39,6 +39,8 @@ const Teaser = ({ blok }: any) => {
     getArticles();
   }, []);
 
+  console.log(articles);
+
   if (!articles?.length) return null;
 
   return (

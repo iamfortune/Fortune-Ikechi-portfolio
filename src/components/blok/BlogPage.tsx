@@ -38,7 +38,9 @@ const BlogPage = ({ blok }: any) => {
 
   return (
     <div className="w-full">
-      <h2 className="text-3xl md:text-left text-center mb-12 font-bold">{blok.title}</h2>
+      <h2 className="text-3xl md:text-left text-center mb-12 font-bold">
+        {blok.title}
+      </h2>
       {loading ? (
         <div className="flex flex-col items-center">
           <Spinner size={100} />
