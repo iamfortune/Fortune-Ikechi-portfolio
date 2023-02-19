@@ -10,6 +10,8 @@ import { convertDate, truncateText } from "../../utils/helper-functions";
 const ArticleTeaser: FC<{ blok: IArticle }> = ({ blok }) => {
   const { theme } = useContext(AppContext);
 
+  if (!blok) return null;
+
   return (
     <Wrapper
       theme={theme}
@@ -19,15 +21,17 @@ const ArticleTeaser: FC<{ blok: IArticle }> = ({ blok }) => {
       <div className="mb-8">
         <img
           className="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
-          src={blok.image.filename}
+          src={blok?.image?.filename}
           alt="blog"
         />
-        <h2 className="md:text-2xl text-xl font-black mb-3">{blok?.title}</h2>
-        <p>{truncateText(blok.intro, 180)}</p>
+        <h2 className="md:text-2xl text-xl font-black mb-3 line-clamp-2">
+          {blok?.title}
+        </h2>
+        <p className="line-clamp-4">{blok?.intro}</p>
       </div>
       <div className="flex items-center justify-between">
         <p>{convertDate(blok?.published_at)}</p>
-        <Link href={`/blog/${blok.slug}`}>
+        <Link href={`/blog/${blok?.slug}`}>
           <p className="font-bold hover:text-blue-100 transition-all duration-300 ease-in-out">
             Read more
           </p>
