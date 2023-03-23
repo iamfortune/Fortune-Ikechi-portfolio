@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "build:sitemap": "node scripts/generate-sitemap.mjs",
-    "postinstall": "npx typesync"
+    "postinstall": "npx typesync",
+    "serve:https": "local-ssl-proxy --source 3010 --target 3001 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
     "@next/font": "13.1.1",

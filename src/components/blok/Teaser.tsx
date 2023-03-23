@@ -7,11 +7,8 @@ import ArticleTeaser from "./ArticleTeaser";
 const Teaser = ({ blok }: any) => {
   const storyblokApi = getStoryblokApi();
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const getArticles = async () => {
-    setLoading(true);
-
     try {
       const res = await storyblokApi?.get(`cdn/stories/`, {
         starts_with: "blog/",
@@ -30,8 +27,6 @@ const Teaser = ({ blok }: any) => {
       );
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -39,7 +34,6 @@ const Teaser = ({ blok }: any) => {
     getArticles();
   }, []);
 
-  console.log(articles);
 
   if (!articles?.length) return null;
 
