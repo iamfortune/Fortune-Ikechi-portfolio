@@ -32,7 +32,7 @@ import prettier from "prettier";
 
                 return `
                         <url>
-                            <loc>${`https://fortuneikechi.vercel.app${route}`}</loc>
+                            <loc>${`https://fortuneikechi.com${route}`}</loc>
                             <lastmod>${new Date().toISOString()}</lastmod>
                             ${changeFreq}
                             ${priority}
