@@ -12,6 +12,14 @@ const Navbar = () => {
         Fortune Ikechi
       </Link>
       <div className="flex items-center">
+      <Link
+          href="/talks"
+          className={`sm:mr-10 mr-5 font-bold ${
+            router.pathname === "/talks" ? "border-b border-blue-100" : ""
+          }`}
+        >
+          Talks
+        </Link>
         <Link
           href="/blog"
           className={`sm:mr-10 mr-5 font-bold ${

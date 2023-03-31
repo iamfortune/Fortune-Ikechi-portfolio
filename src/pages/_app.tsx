@@ -8,6 +8,7 @@ import Page from "../components/blok/Page";
 import Intro from "../components/blok/Intro";
 import BlogPage from "../components/blok/BlogPage";
 import Teaser from "../components/blok/Teaser";
+import Talks from "../components/blok/Talks";
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_API_TOKEN,
@@ -18,7 +19,8 @@ storyblokInit({
     grid: Grid,
     intro: Intro,
     page: Page,
-    Teaser: Teaser
+    Teaser: Teaser,
+    Talks: Talks
   }
 });
 
