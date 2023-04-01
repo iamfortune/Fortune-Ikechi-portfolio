@@ -1,9 +1,13 @@
 import { storyblokEditable } from "@storyblok/react";
 import { render } from "storyblok-rich-text-react-renderer";
+import SEOHead from "../atoms/SEOHead/SEOHead";
 
 const Talks = ({ blok }: any) => {
     
   return (
+    <>
+    <SEOHead title="All my talks" />
+
     <div
       {...storyblokEditable(blok)}
       className="mx-auto max-w-[600px] md:w-11/12 w-full"
@@ -12,6 +16,7 @@ const Talks = ({ blok }: any) => {
         {render(blok.body)}
       </div>
     </div>
+  </>
   );
 };
 

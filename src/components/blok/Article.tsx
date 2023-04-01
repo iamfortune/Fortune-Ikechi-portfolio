@@ -3,9 +3,17 @@ import { FC } from "react";
 import { render } from "storyblok-rich-text-react-renderer";
 import { IArticle } from "../../interfaces/IArticle";
 import { convertDate } from "../../utils/helper-functions";
+import SEOHead from "../atoms/SEOHead/SEOHead";
 
 const Article: FC<{ blok: IArticle }> = ({ blok }) => {
   return (
+    <>
+     <SEOHead
+        title={blok?.title}
+        description={blok?.intro}
+        ogImage={blok.image.filename}
+      />
+
     <section className="w-full mx-auto overflow-x-hidden mb-20">
       <div className="mx-auto flex items-center justify-center flex-col">
         <div className="w-full">
@@ -34,6 +42,7 @@ const Article: FC<{ blok: IArticle }> = ({ blok }) => {
         </div>
       </div>
     </section>
+  </>
   );
 };
 

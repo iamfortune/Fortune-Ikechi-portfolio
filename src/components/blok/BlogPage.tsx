@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getStoryblokApi, storyblokEditable } from "@storyblok/react";
 import ArticleTeaser from "./ArticleTeaser";
 import Spinner from "../atoms/Spinner/Spinner";
+import SEOHead from "../atoms/SEOHead/SEOHead";
 
 const BlogPage = ({ blok }: any) => {
   const storyblokApi = getStoryblokApi();
@@ -37,6 +38,9 @@ const BlogPage = ({ blok }: any) => {
   }, []);
 
   return (
+    <>
+    <SEOHead title={blok.title} />
+
     <div className="w-full">
       <h2 className="text-3xl md:text-left text-center mb-12 font-bold">
         {blok.title}
@@ -58,6 +62,7 @@ const BlogPage = ({ blok }: any) => {
         <p className="text-center text-lg mt-12">No article at the moment!</p>
       )}
     </div>
+  </>
   );
 };
 
